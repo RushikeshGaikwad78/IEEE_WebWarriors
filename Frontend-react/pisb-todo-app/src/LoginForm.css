@@ -1,0 +1,94 @@
+/* LoginForm.css */
+.complete{
+    border: 1px solid black;
+}
+
+*{
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.login-form-container {
+  max-width: 1050px;
+  height: 450px;
+  margin: auto;
+  background-color: #f0e6e6;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 70px 100px 100px 80px;
+  margin-top: 30px;
+   
+    
+    
+    /* margin: 5px 5px 5px 5px; */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+   
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input {
+    width: 220px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    left: 77px;
+     }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  .Content{
+    width: 1050px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .log-img img{
+    width: 600px; 
+    height: 650px ; 
+    /* object-fit: cover; */
+    position: relative;
+    top: 3px;
+    bottom: -30px;
+    right: 207px;
+    left: -63px;
+
+  }
+ 
+  .log-img{
+    
+    max-width: 500px;
+    max-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 300px;
+    
+    
+  }
+ 
+  .auth-form{
+    position: relative;
+    right: 85px;
+  }
+  
