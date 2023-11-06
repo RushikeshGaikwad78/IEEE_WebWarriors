@@ -9,7 +9,7 @@
 
 .login-form-container {
   max-width: 1050px;
-  height: 450px;
+  height: 560px;
   margin: auto;
   background-color: #f0e6e6;
   padding: 50px;
@@ -50,7 +50,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
     position: relative;
-    left: 77px;
+    left: 7px;
      }
   
   .login-button:hover {
@@ -89,6 +89,12 @@
  
   .auth-form{
     position: relative;
-    right: 85px;
+    right: 280px;
+  }
+
+  .title{
+    position: relative;
+    bottom: 50px;
+    /* bottom: 50px; */
   }
   

@@ -1,7 +1,7 @@
 /* SignupForm.css */
 .signup-form-container {
     max-width: 1050px;
-    height: 450px;
+    height: 575px;
     margin: auto;
     background-color: #f0e6e6;
     padding: 50px;
@@ -43,7 +43,7 @@
       cursor: pointer;
       transition: background-color 0.3s;
       position: relative;
-      left: 77px;
+      left: 0px;
     }
     
     .signup-button:hover {
@@ -86,3 +86,7 @@
       right: 700px;
     }
     
+    .title1{
+      position: relative;
+      bottom: 50px;
+    }

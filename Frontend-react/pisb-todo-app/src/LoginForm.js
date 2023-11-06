@@ -23,7 +23,7 @@ function LoginForm() {
         </div>
       <div className="auth-form">
      
-       <h2>Login</h2>
+       <h2 className='title'>Login</h2>
         <form>
           
         <div className="form-group">
@@ -45,6 +45,7 @@ function LoginForm() {
         <button className="login-button" onClick={handleLogin}>
           Login
         </button>
+
       </form>
     </div>
     </div>

@@ -6,7 +6,7 @@ import signupImage from './signup.png';
 function SignupForm() {
   const [firstName, setFirstName] = useState('');
   
-  const [mobileNumber, setMobileNumber] = useState('');
+  // const [mobileNumber, setMobileNumber] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -25,7 +25,7 @@ function SignupForm() {
         </div>
        
        <div className='auth-form1'>
-       <h2>Sign-Up</h2>
+       <h2 className='title1'>Sign-Up</h2>
       <form>
         <div className="form-group">
           <label>Full Name:</label>
@@ -36,14 +36,14 @@ function SignupForm() {
           />
         </div>
        
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Mobile Number:</label>
           <input
             type="text"
             value={mobileNumber}
             onChange={(e) => setMobileNumber(e.target.value)}
           />
-        </div>
+        </div> */}
         <div className="form-group">
           <label>Email:</label>
           <input

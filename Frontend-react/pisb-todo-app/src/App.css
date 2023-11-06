@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  position: relative;
+  top: 85px;
 }
 
 .App-logo {
@@ -73,4 +75,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.toggle-text {
+  width: 300px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333; 
+  background-color: #f0f0f0; 
+  padding: 6px 0px 6px 5px;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  text-align: center; 
+  cursor: pointer; 
+  user-select: none; 
+  transition: background-color 0.3s;
+  
+  margin-left: 915px;
+  margin-top: -156px;
+  position: relative;
+  right: 0px;
+  bottom: -24px;
+}
+
+.toggle-text span {
+  text-decoration: underline; 
+  color: #0077cc; 
+}
+
+.toggle-text:hover {
+  background-color: #ddd; 
 }
