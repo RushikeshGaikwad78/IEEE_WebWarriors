@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 /* Reset some default styles */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 /* Base styles */
 body {
@@ -13,8 +13,8 @@ body {
   background-color: #EFEBE0;
   color: #333;
   text-align: center;
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
 }
 
 /* Navbar */
@@ -26,6 +26,7 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid #f2f2f2;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0px;
 }
 
 .navbar h1 {
@@ -157,3 +158,21 @@ table tr:nth-child(even) {
   margin-right: 10px; /* Add margin-right to space the buttons evenly */
 }
 
+.home{
+  width: 900px;
+  position: relative;
+  left: 545px;
+}
+
+.HP-img{
+  height: 400px;
+  width: 400px;
+  position: relative;
+  right: 680px;
+   top: 100px;
+}
+
+.main1{
+  position: relative;
+  bottom: 390px;
+}

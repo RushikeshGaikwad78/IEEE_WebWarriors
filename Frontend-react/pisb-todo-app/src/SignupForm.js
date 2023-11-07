@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import './SignupForm.css';
 import signupImage from './signup.png'; 
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import LoginForm from './LoginForm';
+import {Link,useHistory} from 'react-router-dom';
 
 function SignupForm() {
   const [firstName, setFirstName] = useState('');
@@ -10,9 +13,11 @@ function SignupForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const history = useHistory();
 
   const handleSignup = () => {
-  
+     history.push('/login');
+    
   };
 
   return (

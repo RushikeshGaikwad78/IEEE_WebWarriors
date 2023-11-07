@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Todolist from './Todolist';
 import AddTodo from './AddTodo';
+import Navbar from './Navbar';
+import IMAGE2 from './hp1.png';
 
 const Homepage = () => {
   const [todos, setTodos] = useState([
@@ -21,10 +23,17 @@ const Homepage = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="home">
+    <img src={IMAGE2} alt="" className='HP-img'/>
+      <div className='main1'>
       <AddTodo addTodo={addTodo} />
       <Todolist todos={todos} title="All todos!" handleDelete={handleDelete}  />
+      </div>
+      
     </div>
+    </>
   );
 };
 

@@ -3,12 +3,15 @@ import React, { useState } from 'react';
 import './LoginForm.css'; 
 // import ImageComponent from './ImageComponent';
 import loginImage from './login.png';
+import {Link,useHistory} from 'react-router-dom';
+
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const handleLogin = () => {
-    
+    history.push('/homepage');
   };
 
   return (
@@ -45,6 +48,7 @@ function LoginForm() {
         <button className="login-button" onClick={handleLogin}>
           Login
         </button>
+        
 
       </form>
     </div>
