@@ -1,7 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+// import { addToDo, getAllToDo } from './unts/handlejs';
 
-const Todolist = ({ todos, title, handleDelete, handleUpdate }) => {
+const Todolist = ({ title, handleDelete, handleUpdate }) => {
   const [editableTodo, setEditableTodo] = useState(null);
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3000')
+      .then(response => {
+        console.log(response.data); // Add this line
+        setTodos(response.data);
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.error('Error fetching todos:', error);
+      });
+  },[]);
 
   const handleEdit = (todo) => {
     setEditableTodo(todo);
