@@ -5,6 +5,7 @@ import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import Homepage from './Homepage';
 
+
 function AppRouter() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function AppRouter() {
         <Route path="/login" component={LoginForm} />
         <Route path="/signup" component={SignupForm} />
         <Route path="/homepage" component={Homepage} />
+        {/* <Route path="/home" component={Landing} /> */}
       </Switch>
     </Router>
   );
