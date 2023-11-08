@@ -2,7 +2,7 @@ import React from 'react';
 import './landing.css';
 import IMAGE1 from './team checklist-rafiki.png';
 // import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
+import Navbar1 from './Navbar1';
 import {Link,useHistory} from 'react-router-dom';
 
 export default function Landing() {
@@ -13,7 +13,7 @@ export default function Landing() {
 
   return (
    <>
-   <Navbar/>
+   <Navbar1/>
     <div className='landing-container'>
       
       <section id="hero">

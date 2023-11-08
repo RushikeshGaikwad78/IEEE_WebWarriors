@@ -62,8 +62,8 @@
       height: 650px ; 
       /* object-fit: cover; */
       position: relative;
-      top: 3px;
-      bottom: -30px;
+      top: 66px;
+      bottom: 2px;
       right: 207px;
       left: 280px;
   
@@ -83,7 +83,8 @@
   
     .auth-form1{
       position: relative;
-      right: 700px;
+      right: 600px;
+      top: 50px;
     }
     
     .title1{
