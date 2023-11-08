@@ -33,6 +33,24 @@ body {
   color: #f1356d;
   font-size: 24px;
   margin: 0;
+  text-shadow: 2px 2px 4px black;
+  animation: bounce 2s 2;
+}
+
+.navbar h1:hover{
+  animation: bounce 2s 2;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 
 .navbar .links {
@@ -170,12 +188,27 @@ table tr:nth-child(even) {
   position: relative;
   right: 680px;
    top: 100px;
+   animation: flash 1s alternate 2;
 }
 
 .main1{
   position: relative;
-  bottom: 390px;
+  bottom: 340px;
+    left: 26px;
+    animation: flash 1s alternate 2;
 }
+
+
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 .navbar1 {
   background-color: #3d3d3e;
@@ -186,13 +219,20 @@ table tr:nth-child(even) {
   border-bottom: 1px solid #f2f2f2;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 0px;
+  
 }
 
 .navbar1 h1 {
   color: #f1356d;
-  font-size: 24px;
+  font-size: 32px;
   margin: 0;
+  text-shadow: 2px 2px 4px #f1356d !important; 
+  animation: bounce 2s 2;
 }
+
+
+
+
 
 .navbar1 .links {
   display: flex;
@@ -214,4 +254,29 @@ table tr:nth-child(even) {
 .navbar1 .links a:hover {
   background-color: transparent;
   color: #f1356d;
+}
+
+.tag-line{
+  color: #f1356d;
+  font-size: 24px;
+  margin: 0;
+ 
+  font-size: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  position: relative;
+  right: 500px;
+  text-shadow: 2px 2px 4px #b02a52 !important; 
+  animation: slideIn 2s ease-in-out;
+}
+
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

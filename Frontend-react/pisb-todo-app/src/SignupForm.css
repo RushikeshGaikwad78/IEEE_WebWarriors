@@ -85,7 +85,24 @@
       position: relative;
       right: 600px;
       top: 50px;
+      animation: jelly 0.5s 2;
     }
+
+    @keyframes jelly {
+      0%, 100% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.2, 0.85);
+      }
+      50% {
+        transform: scale(0.8, 1.15);
+      }
+      75% {
+        transform: scale(1.1, 0.9);
+      }
+    }
+    
     
     .title1{
       position: relative;

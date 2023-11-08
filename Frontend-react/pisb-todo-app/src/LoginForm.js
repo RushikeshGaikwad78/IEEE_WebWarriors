@@ -1,9 +1,10 @@
 // LoginForm.js
 import React, { useState } from 'react';
 import './LoginForm.css'; 
-// import ImageComponent from './ImageComponent';
+
 import loginImage from './login.png';
 import {Link,useHistory} from 'react-router-dom';
+
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -22,15 +23,15 @@ function LoginForm() {
   return (
     
     <div className="login-form-container">
-      {/* <h2>Login</h2> */}
+  
        
       <div className='Content'>
         <div className='log-img'>
-        {/* <ImageComponent /> */}
+       
         <img src={loginImage} alt="" />
         </div>
       <div className="auth-form">
-     
+      
        <h2 className='title'>Login</h2>
         <form>
           
@@ -53,7 +54,9 @@ function LoginForm() {
         <button className="login-button" onClick={handleLogin}>
           Login
         </button>
-        
+        <div className='footer'>
+        <h5>Don't Have an account? <a href="/signup">Signup</a></h5>
+        </div>
 
       </form>
     </div>

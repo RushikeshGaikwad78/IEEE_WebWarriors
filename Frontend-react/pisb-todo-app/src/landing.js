@@ -8,7 +8,7 @@ import {Link,useHistory} from 'react-router-dom';
 export default function Landing() {
   const history = useHistory();
   const handleGetStarted = () => {
-    history.push('/login?');
+    history.push('/login');
   };
 
   return (
@@ -29,9 +29,10 @@ export default function Landing() {
             <h1 className='title1'>Find a better way to work!!!</h1>
             <p>Unleash the power of productivity in the palm of your hand and transform your daily grind into a symphony of accomplishments. Get things done effortlessly, beautifully, and on your own terms with our task management app, where your to-do list becomes a roadmap to success, one task at a time.</p>
             {/* <Link to="/login" className="cta-button">Get Started</Link> */}
-            <button className="cta-button" onClick={handleGetStarted}>
+            {/* <button className="cta-button" href="/login">
           Get Started
-        </button>
+        </button> */}
+        <a className="cta-button" href="/login">Get Started</a>
         
           </div>
         </div>
