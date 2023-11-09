@@ -31,10 +31,11 @@ function LoginForm() {
 
       .then(resp=>{
         if(resp.data === "exist"){
+          alert("Login Sucessfull")
           history.push("/homepage",{state: {id:email}})
         }
         else if(resp.data === "notexist"){
-          alert("user is not loged in ")
+          alert("Enter Valid Credentials!! ")
         }
       })
       .catch(e=>{

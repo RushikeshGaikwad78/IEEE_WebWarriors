@@ -33,6 +33,7 @@ function SignupForm() {
           alert("user already exists")
         }
         else if(resp.data === "notexist"){
+          alert("Registration successfull!!")
            history.push("/homepage",{state: {id:email}})
         }
       })

@@ -176,7 +176,7 @@ table tr:nth-child(even) {
   margin-right: 10px; /* Add margin-right to space the buttons evenly */
 }
 
-.home{
+.homepage{
   width: 900px;
   position: relative;
   left: 545px;
