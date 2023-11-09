@@ -4,6 +4,7 @@ import './LoginForm.css';
 
 import loginImage from './login.png';
 import {Link,useHistory} from 'react-router-dom';
+import axios from 'axios'
 
 
 function LoginForm() {
@@ -11,14 +12,40 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const history = useHistory();
 
-  const handleLogin = () => {
-    if(email === "prasad.gujar2004@gmail.com" && password==="password"){
-      history.push('/homepage');
+  // const handleLogin = () => {
+  //   if(email === "prasad.gujar2004@gmail.com" && password==="password"){
+  //     history.push('/homepage');
+  //   }
+  //   else{
+  //     alert("Enter Valid Credentials !!");
+  //   }
+  // };
+
+  async function handleLogin(e){
+    e.preventDefault();
+
+    try{
+      await axios.post("http://localhost:3000/login",{
+        email, password
+      })
+
+      .then(resp=>{
+        if(resp.data === "exist"){
+          history.push("/homepage",{state: {id:email}})
+        }
+        else if(resp.data === "notexist"){
+          alert("user is not loged in ")
+        }
+      })
+      .catch(e=>{
+        alert("wrong details")
+        console.log(e)
+      })
     }
-    else{
-      alert("Enter Valid Credentials !!");
+    catch{
+        console.log(e)
     }
-  };
+  }
 
   return (
     

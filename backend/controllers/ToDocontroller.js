@@ -1,3 +1,4 @@
+const collections = require('../model/ToDomodel');
 const ToDomodel = require('../model/ToDomodel');
 
 const getToDo = async (req, resp) => {
@@ -111,4 +112,48 @@ module.exports.saveToDo = async(req,resp) => {
           actions: data.actions
         });
     })
+}
+
+
+module.exports.loginpage = async(req,resp) =>{
+    const {email, password} = req.body
+    try{
+       const check = await collections.findOne({email:email})
+
+       if(check){
+        resp.json("exist")
+       }
+       else{
+        resp.json("notexist")
+       }
+    }
+    catch(e){
+       resp.json("notexist")
+    }
+}
+
+
+module.exports.signup = async(req,resp) =>{
+    const {email, password /*, firstName, confirmPassword*/} = req.body
+
+    const data={
+        // firstName: firstName,
+        email: email,
+        password:password,
+        // confirmPassword: confirmPassword
+    }
+    try{
+       const check = await collections.findOne({email:email})
+
+       if(check){
+        resp.json("exist")
+       }
+       else{
+        resp.json("notexist")
+        await collections.insertMany([data])
+       }
+    }
+    catch(e){
+       resp.json("notexist")
+    }
 }

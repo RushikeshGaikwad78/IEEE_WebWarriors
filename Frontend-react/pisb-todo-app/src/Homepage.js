@@ -47,6 +47,7 @@ import axios from 'axios';
 import Navbar from './Navbar';
 import IMAGE2 from './hp1.png';
 // import { getAllToDo } from './unts/handlejs';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Homepage = () => {
   const [todos, setTodos] = useState([]);
@@ -54,7 +55,7 @@ const Homepage = () => {
 
   useEffect(() => {
     // Fetch all todos when the component mounts
-    axios.get('http://localhost:3000')
+    axios.get('http://localhost:3000/homepage')
       .then((response) => {
         console.log(response.data);
         setTodos(response.data);
@@ -68,6 +69,7 @@ const Homepage = () => {
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
   };
+  const location = useLocation()
 
   
 
@@ -97,9 +99,10 @@ const Homepage = () => {
   return (
     <>
     <Navbar/>
-    <div className="home">
+    <div className="homepage">
     <img src={IMAGE2} alt="" className='HP-img'/>
       <div className='main1'>
+        <h1> {location.state.id} </h1>
       <AddTodo addTodo={AddTodo} />
       <Todolist todos={todos} title="All todos!" handleDelete={handleDelete}  />
       </div>

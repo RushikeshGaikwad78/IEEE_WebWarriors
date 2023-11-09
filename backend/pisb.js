@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json())
 app.use(cors())
 
-const authDb = mongoose.createConnection(process.env.AUTH_MONGO_URL, {
+const authDb = mongoose.createConnection(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -100,6 +100,8 @@ app.get('/', getToDo);
 app.post('/save',getToDo.saveToDo)
 app.post('/delete',getToDo.DeleteToDo)
 app.post('/update',getToDo.updateToDo)
+app.post('/login', getToDo.loginpage)
+app.post('/signup', getToDo.signup)
 
 
 
