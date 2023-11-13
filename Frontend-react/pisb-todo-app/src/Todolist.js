@@ -38,7 +38,7 @@ const Todolist = ({ title, handleDelete, handleUpdate }) => {
         // Update the local state with the updated TODO
         // setEditableTodo(null);
         const updatedTodos = todos.map((todo) =>
-          todo.id === editableTodo.id ? editableTodo : todo
+          todo._id === editableTodo._id ? editableTodo : todo
         );
         setTodos(updatedTodos);
         setEditableTodo(null);
@@ -58,6 +58,7 @@ const Todolist = ({ title, handleDelete, handleUpdate }) => {
         // Remove the TODO from the local state
         const updatedTodos = todos.filter((todo) => todo.id !== id);
         setTodos(updatedTodos);
+        window.location.reload(false);
       })
       .catch((error) => {
         console.error('Error deleting todo:', error);
