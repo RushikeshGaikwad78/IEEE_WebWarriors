@@ -21,6 +21,11 @@ function SignupForm() {
     
   // };
 
+  const handleClick =() =>{
+    handleSignup();
+    window.location.reload(false);
+  }
+
   async function handleSignup(e){
     e.preventDefault();
 
@@ -33,8 +38,9 @@ function SignupForm() {
           alert("user already exists")
         }
         else if(resp.data === "notexist"){
-          alert("Registration successfull!!")
-           history.push("/homepage",{state: {id:email}})
+          alert("Registration successfull!!, please login")
+           history.push("/login",{state: {id:email}})
+           window.location.reload(false);
         }
       })
       .catch(e=>{

@@ -20,6 +20,10 @@ function LoginForm() {
   //     alert("Enter Valid Credentials !!");
   //   }
   // };
+  const handleclk =()=>{
+    handleLogin();
+    // window.location.reload(false);
+  }
 
   async function handleLogin(e){
     e.preventDefault();
@@ -33,6 +37,7 @@ function LoginForm() {
         if(resp.data === "exist"){
           alert("Login Sucessfull")
           history.push("/homepage",{state: {id:email}})
+          window.location.reload(false);
         }
         else if(resp.data === "notexist"){
           alert("Enter Valid Credentials!! ")
@@ -80,6 +85,7 @@ function LoginForm() {
           />
         </div>
         <button className="login-button" onClick={handleLogin}>
+        {/* <button className="login-button" onClick={handleclk}> */}
           Login
         </button>
         <div className='footer'>
