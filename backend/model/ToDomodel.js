@@ -15,26 +15,25 @@ const todoSchema = new mongoose.Schema({
     actions:{
         type: String,
     },
-    email:{
-         type: String,
-         require: true,
-    }, 
-    password:{
+})
+
+const userSchema = new mongoose.Schema({
+    email: {
         type: String,
-        require: true,
-    }, 
-    // firstName:{
-    //     type: String,
-    //     require: true,
-    // },
-    // confirmPassword:{
-    //     type: String,
-    //     require: true,
-    // }
+        required: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+});
 
+// const collections = mongoose.model("collection", todoSchema)
+// module.exports=collections
+const ToDoCollection = mongoose.model("ToDo", todoSchema);
+const UserCollection = mongoose.model("User", userSchema);
 
-
-}) 
-
-const collections = mongoose.model("collection", todoSchema)
-module.exports=collections
+module.exports = {
+    ToDoCollection,
+    UserCollection
+};

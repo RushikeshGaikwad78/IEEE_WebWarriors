@@ -1,9 +1,10 @@
 const collections = require('../model/ToDomodel');
-const ToDomodel = require('../model/ToDomodel');
+// const ToDomodel = require('../model/ToDomodel');
+const { ToDoCollection, UserCollection } = require('../model/ToDomodel');
 
 const getToDo = async (req, resp) => {
     try {
-        const todo = await ToDomodel.find({});
+        const todo = await ToDoCollection.find({});
         resp.send(todo);
     } catch (error) {
         resp.status(500).send('Internal Server Error');
@@ -12,23 +13,10 @@ const getToDo = async (req, resp) => {
 };
 module.exports = getToDo;
 
-// module.exports.saveToDo = async(req,resp) => {
-//     const {title, description} = req.body
-
-//     ToDomodel
-//     .create({title,description})
-//     .then((data)=>{
-//         console.log("Added  Successfully")
-//         console.log(data)
-//         resp.send(data)
-//     })
-// }
-
-
 module.exports.saveToDo = async(req,resp) => {
     const {title, description, priority, actions} = req.body
 
-    ToDomodel
+    ToDoCollection
     .create({title, description, priority, actions})
     .then((data)=>{
         console.log("Added Successfully")
@@ -43,25 +31,10 @@ module.exports.saveToDo = async(req,resp) => {
     })
 }
 
-// module.exports.updateToDo= async (req,resp) => {
-//     const{_id,title,description, priority, actions} =  req.body
-//     ToDomodel
-//     .findByIdAndUpdate(_id, {title}, {description}, {priority}, {actions})
-//     .then(()=> resp.send("updated successfully...."))
-//     .catch((err)=> console.log(err))
-// }
-
-// module.exports.DeleteToDo= async (req,resp) => {
-//     const{_id,title, description, priority, actions} =  req.body
-//     ToDomodel
-//     .findByIdAndDelete(_id, {title}, {description}, {priority}, {actions})
-//     .then(()=> resp.send("Deleted successfully...."))
-//     .catch((err)=> console.log(err))
-// }
 
 module.exports.updateToDo = async (req, resp) => {
     const { _id, title, description, priority, actions } = req.body;
-    ToDomodel.findByIdAndUpdate(_id, { title, description, priority, actions })
+    ToDoCollection.findByIdAndUpdate(_id, { title, description, priority, actions })
         .then(() => resp.send("Updated successfully..."))
         .catch((err) => console.log(err));
 }
@@ -74,7 +47,7 @@ module.exports.DeleteToDo = async (req, resp) => {
         return resp.status(400).send('Missing _id parameter for delete');
     }
 
-    ToDomodel.findByIdAndDelete(_id)
+    ToDoCollection.findByIdAndDelete(_id)
         .then(() => resp.send("Deleted successfully..."))
         .catch((err) => {
             console.error('Error deleting todo:', err);
@@ -85,21 +58,10 @@ module.exports.DeleteToDo = async (req, resp) => {
 
 
 
-// module.exports.saveToDo = async(req,resp) => {
-//     const {text} = req.body
-
-//     ToDomodel
-//     .create({text})
-//     .then((data)=>{
-//         console.log("Added  Successfully")
-//         console.log(data)
-//         resp.send(data)
-//     })
-// }
 module.exports.saveToDo = async(req,resp) => {
     const {title, description, priority, actions} = req.body
 
-    ToDomodel
+    ToDoCollection
     .create({title, description, priority, actions})
     .then((data)=>{
         console.log("Added Successfully")
@@ -118,7 +80,7 @@ module.exports.saveToDo = async(req,resp) => {
 module.exports.loginpage = async(req,resp) =>{
     const {email, password} = req.body
     try{
-       const check = await collections.findOne({email:email})
+       const check = await UserCollection.findOne({email:email})
 
        if(check){
         resp.json("exist")
@@ -143,17 +105,17 @@ module.exports.signup = async(req,resp) =>{
         // confirmPassword: confirmPassword
     }
     try{
-       const check = await collections.findOne({email:email})
+       const check = await UserCollection.findOne({email:email})
 
        if(check){
         resp.json("exist")
        }
        else{
         resp.json("notexist")
-        await collections.insertMany([data])
+        await UserCollection.create({email,password})
        }
     }
     catch(e){
        resp.json("notexist")
     }
-}
+};
